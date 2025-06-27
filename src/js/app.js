@@ -33,14 +33,38 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>Lucy Boilett</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
-          <ul class="position-right">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
+          <h1>${variables.name ? variables.name : "Name"} ${
+    variables.lastName ? variables.lastName : "lastName"
+  } </h1>
+          <h2>${variables.role ? variables.role : "chosseeRole"}</h2>
+          <h3>${variables.city ? variables.city : "chosseCity"} ${
+    variables.country ? variables.country : "chosseCountry"
+  }</h3>
+          <ul class= "${
+            variables.socialMediaPosition
+              ? variables.socialMediaPosition
+              : "position-right"
+          }">
+            <li><a href=${
+              variables.twitter
+                ? variables.twitter
+                : "https://x.com/search?q=%23BaldursGate3&src=typeahead_click"
+            }><i class="fab fa-twitter"></i></a></li>
+            <li><a href=${
+              variables.github
+                ? variables.github
+                : "https://github.com/monkeyjp/fs-pf-115-github"
+            }}><i class="fab fa-github"></i></a></li>
+            <li><a href=${
+              variables.linkedin
+                ? variables.linkedin
+                : "https://www.linkedin.com/in/%C3%A1lvaro-valverde-ant%C3%B3n-559b01186/"
+            }}><i class="fab fa-linkedin"></i></a></li>
+            <li><a href=${
+              variables.instagram
+                ? variables.instagram
+                : "https://instagram.com/4geeksacademy"
+            }><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
     `;
